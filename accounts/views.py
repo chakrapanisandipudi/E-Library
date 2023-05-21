@@ -266,3 +266,31 @@ def maintenance(request):
 
 def coming_soon(request):
     return render(request,'coming-soon.html')
+
+
+def delete_book(request, myid):
+    books = Book.objects.filter(id=myid)
+    books.delete()
+    return redirect("book_list")
+
+def edit_book(request, myid):
+    books = Book.objects.get(id=myid)
+    return render(request,'admin_templates/edit_book.html',{'books':books})
+
+@login_required(login_url = 'admin_login')
+def edit_book_save(request):
+    if request.method == "POST":
+        books.title = request.POST.get('title')
+        books.author = request.POST.get('author')
+        books.copies = request.POST.get('copies')
+        books.pub_name = request.POST.get('pub_name')
+        books.publication = request.POST.get('publication')
+        books.isbn = request.POST.get('isbn')
+        books.copyright = request.POST.get('copyright')
+        books.status = request.POST.get('status')
+        books.Date_added = request.POST.get('Date_added')
+        books = Books()
+        books.save()
+        alert = True
+        return render(request, "admin_templates/book_list.html", {'alert':alert})
+    return render(request, "admin_templates/book_list.html")

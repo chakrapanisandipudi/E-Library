@@ -20,6 +20,9 @@ urlpatterns = [
     path("issue_book",views.issue_book,name="issue_book"),
     path("student_list",views.student_list,name="student_list"),
     path("view_issued_book", views.view_issued_book, name="view_issued_book"),
+    path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
+    path("edit_book/<int:myid>/", views.edit_book, name="edit_book"),
+    path("edit_book_save", views.edit_book_save, name="edit_book_save"),
 
     #---- Student templates ---#
     path("student_dashboard",views.student_dashboard,name="student_dashboard"),

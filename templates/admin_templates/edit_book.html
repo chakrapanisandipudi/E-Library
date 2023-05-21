@@ -136,7 +136,7 @@
 <div class="navbar-nav align-items-center">
   <div class="nav-item d-flex align-items-center">
     <i class="bx bx-search fs-4 lh-0"></i>
-    <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search...">
+    <input type="text" class="form-control border-0 shadow-none" value="Search..." aria-label="Search...">
   </div>
 </div>
 <!-- /Search -->
@@ -153,7 +153,7 @@
       <div class="container-xxl flex-grow-1 container-p-y">
         
         
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Add Book</h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Edit Book</h4>
 
 <!-- Basic Layout & Basic with Icons -->
 <div class="row">
@@ -162,56 +162,56 @@
 <div class="card mb-4">
   
   <div class="card-body">
-    <form action="add_book" method="post">
+    <form action="#" method="post">
         {% csrf_token %}
         <div class="row mb-3">
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-title">Title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Title" id="basic-default-title">
+            <input type="text" class="form-control" name="title" id="title" value="{{books.title}}" id="basic-default-title">
             </div>
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-category">Category</label>
-            <input type="text" class="form-control" name="category" id="category" placeholder="Category" id="basic-default-category">
+            <input type="text" class="form-control" name="category" id="category" value="{{ books.category }}" id="basic-default-category">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-author">Author</label>
-            <input type="text" class="form-control" name="author" id="author" placeholder="Author" id="basic-default-author">
+            <input type="text" class="form-control" name="author" id="author" value="{{ books.author }}" id="basic-default-author">
             </div>
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-copies">Copies</label>
-            <input type="text" class="form-control" name="copies" id="copies" placeholder="Copies" id="basic-default-copies">
+            <input type="text" class="form-control" name="copies" id="copies" value="{{ books.copies }}" id="basic-default-copies">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-publication">Publication</label>
-            <input type="text" class="form-control" name="publication" id="publication" placeholder="Publication" id="basic-default-publication">
+            <input type="text" class="form-control" name="publication" id="publication" value="{{ books.publication }}" id="basic-default-publication">
             </div>
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-pubname">Pub Name</label>
-            <input type="text" class="form-control" name="pub_name" id="pub_name" placeholder="Pub Name" id="basic-default-pubname">
+            <input type="text" class="form-control" name="pub_name" id="pub_name" value="{{ books.pub_name }}" id="basic-default-pubname">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-isbn">ISBN</label>
-            <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN" id="basic-default-isbn">
+            <input type="text" class="form-control" name="isbn" id="isbn" value="{{ books.isbn }}" id="basic-default-isbn">
             </div>
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-copyright">Copy Right</label>
-            <input type="text" class="form-control" name="copyright" id="copyright" placeholder="Copy Right" id="basic-default-copyright">
+            <input type="text" class="form-control" name="copyright" id="copyright" value="{{ books.copyright }}" id="basic-default-copyright">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-date">Date Added</label>
-            <input type="date" class="form-control" name="Date_added" id="Date_added" placeholder="Added Date" id="basic-default-date">
+            <input type="date" class="form-control" name="Date_added" id="Date_added" value="{{ books.Date_added}}" id="basic-default-date">
             </div>
             <div class="col">
             <label class="col-sm-2 col-form-label" for="basic-default-status">Status</label>
-            <input type="text" class="form-control" name="status" id="status" placeholder="Status" id="basic-default-status">
+            <input type="text" class="form-control" name="status" id="status" value="{{ books.status }}" id="basic-default-status">
             </div>
         </div>
         <div class="row">
@@ -288,7 +288,14 @@ document.write(new Date().getFullYear())
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="../../../buttons.github.io/buttons.js"></script>
-
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Profile Updated Successfully.")
+    document.location = "boo_list"
+    {% endif %}
+</script>
+{% endblock %}
 </body>
 
 </html>
