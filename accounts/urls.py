@@ -1,5 +1,4 @@
 
-
 from django.urls import path
 
 from . import views
@@ -11,6 +10,9 @@ urlpatterns = [
     path("contact_us",views.contact_us,name="contact_us"),
     path("show_login",views.show_login,name="show_login"),
     path("register",views.register,name="register"),
+    path("error404",views.error404, name="error404"),
+    path("coming_soon",views.coming_soon, name="coming_soon"),
+    path("maintenance",views.maintenance, name="maintenance"),
 
     #---- admin templates ---#
     path("admin_dashboard",views.admin_dashboard,name="admin_dashboard"),
@@ -23,6 +25,9 @@ urlpatterns = [
     path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
     path("edit_book/<int:myid>/", views.edit_book, name="edit_book"),
     path("edit_book_save", views.edit_book_save, name="edit_book_save"),
+    path("admin_accepted_books", views.admin_accepted_books, name="admin_accepted_books"),
+    path("admin_recieved_books", views.admin_recieved_books, name="admin_recieved_books"),
+    path("admin_requested_books", views.admin_requested_books, name="admin_requested_books"),
 
     #---- Student templates ---#
     path("student_dashboard",views.student_dashboard,name="student_dashboard"),

@@ -1,0 +1,89 @@
+{% load static %}
+<!-- ##### FOOTER #####-->
+<footer class="footer-sitemap">
+    <div class="footer-bottom-deco">
+      <div class="left-deco">
+        <img
+          class="img-2d3d"
+          src="{% static 'assets/images/footer_plant_3d_2x_i8osqq.png' %}"
+          alt="footer"/>
+      </div>
+      <div class="right-deco">
+        <img
+          class="img-2d3d"
+          src="{% static 'assets/images/footer_plant2_3d_2x_dvi0iw.png' %}"
+          alt="footer"/>
+      </div>
+    </div>
+    <div class="container mq-sm-down" data-class="fixed-width">
+      <div class="row">
+        <div class="col-md-4 pa-lg-4 logo-area">
+          <div class="logo">
+            <span class="logo-main landscape medium"
+              ><img
+                src="{% static 'assets/images/logo-education.png' %}"
+                alt="logo" />LMS</span
+            >
+          </div>
+          <p class="body-2">
+            Anywhere, anytime. Start learning today! And Get an
+            Exceptional Education Experience.
+          </p>
+          <p class="body-2 hidden-sm-down">
+            &copy; LMS
+          </p>
+        </div>
+        <div class="col-md-8 pa-4">
+          <ul class="show-sm-down collapsible">
+            <li class="accordion-content">
+              <div class="collapsible-header">
+                <h6 class="title">Company</h6>
+                <i class="material-icons right arrow">expand_more</i>
+              </div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#history">History</a></li>
+                  <li><a href="{% url 'contact_us' %}">Contact us</a></li>
+                  <li><a href="#locations">Locations</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="accordion-content">
+              <div class="collapsible-header">
+                <h6 class="title">Legal</h6>
+                <i class="material-icons right arrow">expand_more</i>
+              </div>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="#privacy-policy">Privacy policy</a>
+                  </li>
+                  <li><a href="#terms-of-use">Terms of use</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="row show-md-up justify-content-around">
+            <div class="col pa-4 site-map-item">
+              <h6 class="title mb-4">Company</h6>
+              <ul>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact us</a></li>
+                <li><a href="#locations">Locations</a></li>
+              </ul>
+            </div>
+            <div class="col pa-4 site-map-item">
+              <h6 class="title mb-4">Legal</h6>
+              <ul>
+                <li><a href="#privacy-policy">Privacy policy</a></li>
+                <li><a href="#terms-of-use">Terms of use</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<!-- ##### END FOOTER #####-->

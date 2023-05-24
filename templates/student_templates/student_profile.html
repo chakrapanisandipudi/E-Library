@@ -10,8 +10,8 @@
 
     <title>Dashboard </title>
     
-    <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
-    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+    <meta name="description" content="E-Library" />
+    <meta name="keywords" content="dashboard, ">
     <!-- Canonical SEO -->
     <link rel="canonical" href="#products/sneat-bootstrap-html-admin-template/">
     
@@ -81,17 +81,12 @@
 
 <div class="row">
 <div class="col-md-12">
-<ul class="nav nav-pills flex-column flex-md-row mb-3">
-  <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a></li>
-  <li class="nav-item"><a class="nav-link" href="pages-account-settings-notifications.html"><i class="bx bx-bell me-1"></i> Notifications</a></li>
-  <li class="nav-item"><a class="nav-link" href="pages-account-settings-connections.html"><i class="bx bx-link-alt me-1"></i> Connections</a></li>
-</ul>
 <div class="card mb-4">
   <h5 class="card-header">Profile Details</h5>
   <!-- Account -->
   <div class="card-body">
     <div class="d-flex align-items-start align-items-sm-center gap-4">
-      <img src="{% static 'assets/img/avatars/1.png' %}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+      <img src="{% static 'assets/images/users/user-100.png' %}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
       <div class="button-wrapper">
         <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
           <span class="d-none d-sm-block">Upload new photo</span>
@@ -113,11 +108,11 @@
       <div class="row">
         <div class="mb-3 col-md-6">
           <label for="firstName" class="form-label">User Name</label>
-          <input class="form-control" type="text" id="firstName" name="firstName" placeholder={{user.username}} autofocus />
+          <input class="form-control" type="text" id="firstName" name="firstName" value={{user.username}} autofocus />
         </div>
         <div class="mb-3 col-md-6">
           <label for="email" class="form-label">E-mail</label>
-          <input class="form-control" type="text" id="email" name="email"  placeholder={{user.email}} />
+          <input class="form-control" type="text" id="email" name="email"  value={{user.email}} />
         </div>
         <div class="mb-3 col-md-6">
           <label for="organization" class="form-label">Department</label>
@@ -126,13 +121,12 @@
         <div class="mb-3 col-md-6">
           <label class="form-label" for="phoneNumber">Phone Number</label>
           <div class="input-group input-group-merge">
-            <span class="input-group-text">US (+1)</span>
-            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" placeholder= {{user.student.phone}} />
+            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" value= {{user.student.phone}} />
           </div>
         </div>
         <div class="mb-3 col-md-6">
           <label for="address" class="form-label">Admission Number</label>
-          <input type="text" class="form-control" id="address" name="address" placeholder={{user.student.adm_number}} />
+          <input type="text" class="form-control" id="address" name="address" value={{user.student.adm_number}} />
         </div>
       <div class="mt-2">
         <button type="submit" class="btn btn-primary me-2">Save changes</button>

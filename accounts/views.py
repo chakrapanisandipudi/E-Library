@@ -294,3 +294,13 @@ def edit_book_save(request):
         alert = True
         return render(request, "admin_templates/book_list.html", {'alert':alert})
     return render(request, "admin_templates/book_list.html")
+
+
+def admin_accepted_books(request):
+    return render(request,'admin_templates/admin_accepted_books.html')
+
+def admin_requested_books(request):
+    return render(request,'admin_templates/admin_requested_books.html')
+
+def admin_recieved_books(request):
+    return render(request,'admin_templates/admin_recieved_books.html')

@@ -50,7 +50,7 @@
     <meta property="og:image" content="../../images/logo-education.html">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <title>E-Learn - Login</title><!-- Styles-->
+    <title>LMS - Login</title><!-- Styles-->
     <link href="{% static 'assets/css/education-bundle.min.css' %}" rel="stylesheet">
 </head>
 
@@ -151,12 +151,12 @@
                                 <nav class="nav-menu flex-grow-1">
                                     <div class="logo flex-grow-1 start-mobile"><a href="/"><span
                                                 class="logo-main landscape medium"><img
-                                                    src="{% static 'assets/images/logo-education.png' %}"
-                                                    alt="logo">E-Learn</span></a></div>
-                                    <nav class="user-menu"><a class="btn primary waves-effect"
+                                                    src="{% static 'assets/images/1.jpeg' %}"
+                                                    alt="logo">LMS</span></a></div>
+                                    <!-- <nav class="user-menu"><a class="btn primary waves-effect"
                                             href="{% url 'register' %}">register</a> <span
                                             class="spacer vertical-divider show-md-up"></span>
-                                    </nav>
+                                    </nav> -->
                                 </nav>
                             </div>
                         </div>
@@ -177,16 +177,8 @@
                                                                 <h4 class="use-text-title mq-md-up use-text-primary"
                                                                     data-class="use-text-subtitle">Welcome back</h4>
                                                             </div>
-                                                            <div class="socmed-side-login"><button
-                                                                    class="btn navi-btn waves-effect"><i
-                                                                        class="ion-social-facebook left"></i>Facebook</button>
-                                                                <button class="btn blue-btn waves-effect"><i
-                                                                        class="ion-social-twitter left"></i>Twitter</button>
-                                                                <button class="btn red-btn waves-effect"><i
-                                                                        class="ion-social-google left"></i>Google</button>
-                                                            </div>
                                                             <div class="separator">
-                                                                <p>Or login with email</p>
+                                                                <p>Login with email</p>
                                                             </div>
                                                             <form id="login_form" action="admin_login" method="post">
                                                                 {% csrf_token %}
@@ -238,15 +230,12 @@
                                             <div class="col-md-6">
                                                 <div class="hidden-sm-down">
                                                     <div class="greeting">
-                                                        <h4 class="use-text-title2 use-text-primary pb-2">Please login
+                                                        <h4 class="use-text-title2 use-text-primary pb-2">Please Login
                                                             to continue</h4>
                                                         <h6 class="use-text-subtitle2">A platform with efficient
                                                             integration of many features and so much more</h6>
                                                         <div class="img"><img class="img-2d3d"
-                                                                src="{% static 'assets/images/login_3d_2x_msphjv.png' %}"
-                                                                data-2d="https://res.cloudinary.com/skyrev/image/upload/v1613842291/skyrev/education/login_2d_2x_amt5pl.png' %}"
-                                                                data-3d="https://res.cloudinary.com/skyrev/image/upload/v1613842291/skyrev/education/login_3d_2x_msphjv.png' %}"
-                                                                alt="login"></div>
+                                                                src="{% static 'assets/images/login_3d_2x_msphjv.png' %}" alt="login"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -258,120 +247,7 @@
                     </div>
                     <!-- ##### END FORM #####-->
                     <!-- ##### FOOTER #####-->
-                    <div id="footer">
-                        <footer class="footer-sitemap">
-                            <div class="footer-bottom-deco">
-                                <div class="left-deco"><img class="img-2d3d"
-                                        src="{% static 'assets/images/footer_plant_3d_2x_i8osqq.png' %}"
-                                        alt="footer">
-                                    </div>
-                                <div class="right-deco"><img class="img-2d3d"
-                                        src="{% static 'assets/images/footer_plant2_3d_2x_dvi0iw.png' %}"
-                                        alt="footer">
-                                </div>
-                            </div>
-                            <div class="container mq-sm-down" data-class="fixed-width">
-                                <div class="row">
-                                    <div class="col-md-3 pa-lg-4 logo-area">
-                                        <div class="logo"><span class="logo-main landscape medium"><img
-                                                    src="{% static 'assets/images/logo-education.png' %}" alt="logo">E-Learn</span>
-                                        </div>
-                                        <p class="body-2">Anywhere, anytime. Start learning today! And Get an
-                                            Exceptional Education Experience.</p>
-                                        <p class="body-2 hidden-sm-down">&copy; E-Library</p>
-                                    </div>
-                                    <div class="col-md-6 pa-4">
-                                        <ul class="show-sm-down collapsible">
-                                            <li class="accordion-content">
-                                                <div class="collapsible-header">
-                                                    <h6 class="title">Company</h6><i
-                                                        class="material-icons right arrow">expand_more</i>
-                                                </div>
-                                                <div class="collapsible-body">
-                                                    <ul>
-                                                        <li><a href="#team">Team</a></li>
-                                                        <li><a href="#history">History</a></li>
-                                                        <li><a href="#contact-us">Contact us</a></li>
-                                                        <li><a href="#locations">Locations</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="accordion-content">
-                                                <div class="collapsible-header">
-                                                    <h6 class="title">Resources</h6><i
-                                                        class="material-icons right arrow">expand_more</i>
-                                                </div>
-                                                <div class="collapsible-body">
-                                                    <ul>
-                                                        <li><a href="#resource">Resource</a></li>
-                                                        <li><a href="#resource-name">Resource name</a></li>
-                                                        <li><a href="#another-resource">Another resource</a></li>
-                                                        <li><a href="#final-resource">Final resource</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="accordion-content">
-                                                <div class="collapsible-header">
-                                                    <h6 class="title">Legal</h6><i
-                                                        class="material-icons right arrow">expand_more</i>
-                                                </div>
-                                                <div class="collapsible-body">
-                                                    <ul>
-                                                        <li><a href="#privacy-policy">Privacy policy</a></li>
-                                                        <li><a href="#terms-of-use">Terms of use</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="row show-md-up justify-content-around">
-                                            <div class="col pa-4 site-map-item">
-                                                <h6 class="title mb-4">Company</h6>
-                                                <ul>
-                                                    <li><a href="#team">Team</a></li>
-                                                    <li><a href="#history">History</a></li>
-                                                    <li><a href="#contact-us">Contact us</a></li>
-                                                    <li><a href="#locations">Locations</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col pa-4 site-map-item">
-                                                <h6 class="title mb-4">Resources</h6>
-                                                <ul>
-                                                    <li><a href="#resource">Resource</a></li>
-                                                    <li><a href="#resource-name">Resource name</a></li>
-                                                    <li><a href="#another-resource">Another resource</a></li>
-                                                    <li><a href="#final-resource">Final resource</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col pa-4 site-map-item">
-                                                <h6 class="title mb-4">Legal</h6>
-                                                <ul>
-                                                    <li><a href="#privacy-policy">Privacy policy</a></li>
-                                                    <li><a href="#terms-of-use">Terms of use</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 pa-4">
-                                        <div class="socmed">
-                                            <a class="btn btn-icon waves-effect"
-                                              ><span class="ion-social-facebook icon"></span
-                                            ></a>
-                                            <a class="btn btn-icon waves-effect"
-                                              ><span class="ion-social-twitter icon"></span
-                                            ></a>
-                                            <a class="btn btn-icon waves-effect"
-                                              ><span class="ion-social-instagram icon"></span
-                                            ></a>
-                                            <a class="btn btn-icon waves-effect"
-                                              ><span class="ion-social-linkedin icon"></span
-                                            ></a>
-                                          </div>
-                                        <p class="body-2 mt-5 text-center hidden-md-up">&copy; E-Library</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
+                   {% include 'footer.html' %}
                     <!-- ##### END FOOTER #####-->
                 </div>
             </div>

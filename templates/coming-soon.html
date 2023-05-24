@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -24,7 +25,7 @@
     <meta name="theme-color" content="#00BCD4">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../../../code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"><!-- Facebook-->
+    <link rel="stylesheet" href="{% static 'assets/css/ionicons-2.0.1/css/ionicons.min.css' %}"><!-- Facebook-->
     <meta property="author" content="nirwana">
     <meta property="og:site_name" content="alexstrap.ux-maestro.com">
     <meta property="og:locale" content="en_US">
@@ -43,7 +44,7 @@
     <meta property="og:image" content="../../images/logo-education.html">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <title>E-Learn - Coming Soon</title><!-- Styles-->
+    <title>LMS - Coming Soon</title><!-- Styles-->
     <link href="{% static 'assets/css/education-bundle.min.css' %}" rel="stylesheet">
 </head>
 
@@ -55,11 +56,6 @@
         <div class="loading"></div>
         <div class="m-content smart smart-var" id="main-wrap">
             <div>
-                <div class="btn-float-opt"><button class="btn btn-icon waves-effect" id="open_palette"><i
-                            class="material-icons">palette</i></button><button class="btn btn-icon waves-effect"
-                        id="open_layouts"><i class="material-icons">web</i></button><button
-                        class="btn btn-icon waves-effect" id="open_explore"><i
-                            class="material-icons">library_books</i></button></div>
                 <div class="sidenav-opt drawer-opt" id="slidemenu">
                     <div class="opt-wrap">
                         <div class="hidden-sm-up">
@@ -227,9 +223,12 @@
                     <div class="d-flex flex-fill align-items-center">
                         <div class="col-md-12 text-center"><!-- ##### LOGO #####-->
                             <div class="d-flex justify-content-center align-items-center mb-10"><span
-                                    class="logo-main landscape medium"><img src="../assets/images/logo-education.png"
-                                        alt="logo">E-Learn</span></div>
-                            <!-- ##### END LOGO #####--><!-- ##### TEXT #####-->
+                                    class="logo-main landscape medium">
+                                    <img src="{% static 'assets/images/1.jpeg' %}"
+                                        alt="logo">LMS</span>
+                                    </div>
+                            <!-- ##### END LOGO #####-->
+                            <!-- ##### TEXT #####-->
                             <div class="text-center">
                                 <h3 class="use-text-title use-text-primary">Coming Soon</h3>
                                 <h5 class="use-text-subtitle2 mq-sm-up" data-class="mb-10">Will come with performance in
