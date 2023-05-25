@@ -23,11 +23,14 @@ urlpatterns = [
     path("student_list",views.student_list,name="student_list"),
     path("view_issued_book", views.view_issued_book, name="view_issued_book"),
     path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
-    path("edit_book/<int:myid>/", views.edit_book, name="edit_book"),
-    path("edit_book_save", views.edit_book_save, name="edit_book_save"),
+    path('edit/<int:pk>/', views.book_update, name='book_edit'),
+    path("view_book/<int:myid>/", views.view_book, name="view_book"),
     path("admin_accepted_books", views.admin_accepted_books, name="admin_accepted_books"),
     path("admin_recieved_books", views.admin_recieved_books, name="admin_recieved_books"),
     path("admin_requested_books", views.admin_requested_books, name="admin_requested_books"),
+    # path("edit_book_save", views.edit_book_save, name="edit_book_save"),
+    # path('edit/<int:id>',views.edit,name="edit"),
+    # path('update/<int:pk>',views.update,name="update"),
 
     #---- Student templates ---#
     path("student_dashboard",views.student_dashboard,name="student_dashboard"),

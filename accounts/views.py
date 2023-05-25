@@ -1,12 +1,13 @@
 import datetime
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from accounts import forms, models
+from accounts.forms import Book_updateForm
 
 from accounts.models import Book, IssuedBook, Student
 
@@ -32,10 +33,6 @@ def register(request):
 def admin_dashboard(request):
     return render(request, "admin_templates/admin_index.html")
 
-
-# def admin_signup(request):
-#     return render(request, "admin_templates/admin_register.html")
-
 @login_required(login_url = 'show_login')
 def add_book(request):
     if request.method == "POST":
@@ -59,10 +56,6 @@ def add_book(request):
 def book_list(request):
     books = Book.objects.all()
     return render(request, "admin_templates/book_list.html",{'books':books})
-
-def edit_book(request):
-    books = Book.objects.all()
-    return render(request, "admin_templates/edit_book.html",{'books':books})
 
 
 @login_required(login_url = 'show_login')
@@ -90,24 +83,6 @@ def student_dashboard(request):
 
 def student_register(request):
     return render(request, "student_templates/student_register.html")
-
-# def add_student_save(request):
-#     if request.method!="POST":
-#         return HttpResponse("Method Not Allowed")
-#     else:
-#         username=request.POST("username")
-#         email=request.POST("email")
-#         password=request.POST("password")
-#         phone = request.POST("phone")
-
-#         try:
-#             user=User.objects.create_user(username=username,password=password,email=email)
-#             student = Student.objects.create(user=user, phone=phone)
-#             user.save()
-#             student.save()
-#             return HttpResponseRedirect(reverse("login"))
-#         except:
-#             return HttpResponseRedirect(reverse("student_register"))
 
 
 def student_register(request):
@@ -273,28 +248,26 @@ def delete_book(request, myid):
     books.delete()
     return redirect("book_list")
 
-def edit_book(request, myid):
+
+def view_book(request, myid):
     books = Book.objects.get(id=myid)
-    return render(request,'admin_templates/edit_book.html',{'books':books})
+    return render(request,'admin_templates/view_book.html',{'books':books})
 
-@login_required(login_url = 'admin_login')
-def edit_book_save(request):
-    if request.method == "POST":
-        books.title = request.POST.get('title')
-        books.author = request.POST.get('author')
-        books.copies = request.POST.get('copies')
-        books.pub_name = request.POST.get('pub_name')
-        books.publication = request.POST.get('publication')
-        books.isbn = request.POST.get('isbn')
-        books.copyright = request.POST.get('copyright')
-        books.status = request.POST.get('status')
-        books.Date_added = request.POST.get('Date_added')
-        books = Books()
-        books.save()
-        alert = True
-        return render(request, "admin_templates/book_list.html", {'alert':alert})
-    return render(request, "admin_templates/book_list.html")
 
+# def edit_book(request, id):
+#     books = Book.objects.get(id=id)
+#     return render(request,'admin_templates/edit_book.html',{'books':books})
+
+def book_update(request,pk):
+    book= get_object_or_404(Book, pk=pk)
+    form = Book_updateForm(request.POST or None, instance=book)
+    if form.is_valid():
+        form.save()
+        return redirect('book_list')
+    context = {
+        'form': form
+    }
+    return render(request,'admin_templates/edit_book.html', context )
 
 def admin_accepted_books(request):
     return render(request,'admin_templates/admin_accepted_books.html')
@@ -303,4 +276,4 @@ def admin_requested_books(request):
     return render(request,'admin_templates/admin_requested_books.html')
 
 def admin_recieved_books(request):
-    return render(request,'admin_templates/admin_recieved_books.html')
+    return render(request,'admin_templates/admin_returned_books.html')
