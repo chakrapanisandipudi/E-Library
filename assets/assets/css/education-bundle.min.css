@@ -31449,10 +31449,11 @@ body {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  top: -2px;
+  top: -12px;
 }
 [dir="ltr"] .logo-main.landscape img {
   margin-right: 16px;
+  margin-top: 20px;
 }
 [dir="rtl"] .logo-main.landscape img {
   margin-left: 16px;

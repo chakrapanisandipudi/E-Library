@@ -9,20 +9,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="E-Library">
-    <meta name="viewport" content="minimum-scale=1,initial-scale=1,width=device-width,shrink-to-fit=no"><!-- Favicon-->
-    <link rel="shortcut icon" href="https://skyone.vercel.app/education/assets/favicons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/favicons/apple-icon-57x57.png' %}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/favicons/apple-icon-60x60.png' %}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/favicons/apple-icon-72x72.png' %}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/favicons/apple-icon-76x76.png' %}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/favicons/apple-icon-114x114.png' %}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/favicons/apple-icon-120x120.png' %}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/favicons/apple-icon-144x144.png' %}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/favicons/apple-icon-152x152.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/favicons/apple-icon-180x180.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'assets/favicons/android-icon-192x192.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicons/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicons/favicon-16x16.png' %}">
+    <meta name="viewport" content="minimum-scale=1,initial-scale=1,width=device-width,shrink-to-fit=no">
+     <!-- Favicon -->
+     <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.png' %}" />
     <link rel="manifest" href="https://skyone.vercel.app/education/assets/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{% static 'assets/favicons/ms-icon-144x144.png' %}"><!-- PWA primary color-->
@@ -30,27 +19,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{% static 'assets/css/ionicons-2.0.1/css/ionicons.min.css' %}">
-    
-    <!-- Facebook-->
-    <meta property="author" content="nirwana">
-    <meta property="og:site_name" content="alexstrap.ux-maestro.com">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <!-- Twitter-->
-    <meta property="twitter:site" content="nirwana.ux-maestro.com">
-    <meta property="twitter:domain" content="nirwana.ux-maestro.com">
-    <meta property="twitter:creator" content="nirwana">
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:image:src" content="{% static 'assets/images/logo-education.png' %}">
-    <meta property="og:url" content="nirwana.indisains.com/education">
-    <meta property="og:title" content="Education">
-    <meta property="og:description" content="E-Library">
-    <meta name="twitter:site" content="nirwana.indisains.com/education">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="../../images/logo-education.html">
-    <meta property="og:image" content="../../images/logo-education.html">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+
     <title>LMS - Register</title><!-- Styles-->
     <link href="{% static 'assets/css/education-bundle.min.css' %}" rel="stylesheet">
 </head>
@@ -145,18 +114,19 @@
                 </div>
             </div>
             <div id="register-page">
-                <div class="main-wrap"><!-- #### HEADER ####-->
+                <div class="main-wrap">
+                    <!-- #### HEADER ####-->
                     <header class="app-bar header" id="header">
                         <div class="container">
                             <div class="header-content">
                                 <nav class="nav-menu flex-grow-1">
-                                    <div class="logo flex-grow-1 start-mobile"><a href="#"><span
+                                    <div class="logo flex-grow-1 start-mobile"><a href="/"><span
                                                 class="logo-main landscape medium"><img
-                                                    src="{% static 'assets/images/logo-education.png' %}"
-                                                    alt="logo">LMS</span></a></div>
-                                    <nav class="user-menu"><a class="btn primary waves-effect"
-                                            href="{% url 'show_login' %}">Login</a> <span
-                                            class="spacer vertical-divider show-md-up"></span>
+                                                    src="{% static 'assets/images/1.jpeg' %}"
+                                                    alt="logo"></span></a></div>
+                                    <nav class="user-menu">
+                                        <a class="shadow-lg btn primary waves-effect"
+                                            href="{% url 'show_login' %}">Login</a> 
                                     </nav>
                                 </nav>
                             </div>
@@ -169,7 +139,7 @@
                                     <div class="auth-frame">
                                         <div class="row mb-0">
                                             <div class="col-md-6 px-lg-6 px-2">
-                                                <div class="card form-box fragment-fadeUp">
+                                                <div class="shadow-lg card form-box fragment-fadeUp">
                                                     <div class="form-wrap">
                                                         <div class="form-style">
                                                             <div class="head">

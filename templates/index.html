@@ -7,45 +7,9 @@
     <meta charset="utf-8" />
     <meta name="description" content="E-Library" />
     <meta name="viewport" content="minimum-scale=1,initial-scale=1,width=device-width, shrink-to-fit=no"/>
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="https://skyone.vercel.app/education/assets/favicons/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/favicons/apple-icon-57x57.png' %}" />
-    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/favicons/apple-icon-60x60.png' %}" />
-    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/favicons/apple-icon-72x72.png' %}" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/favicons/apple-icon-76x76.png' %}" />
-    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/favicons/apple-icon-114x114.png' %}" />
-    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/favicons/apple-icon-120x120.png' %}" />
-    <link rel="apple-touch-icon" sizes="144x144"  href="{% static 'assets/favicons/apple-icon-144x144.png' %}"/>
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="{% static 'assets/favicons/apple-icon-152x152.png' %}"/>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'assets/favicons/apple-icon-180x180.png' %}"/>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="{% static 'assets/favicons/android-icon-192x192.png' %}"/>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{% static 'assets/favicons/favicon-32x32.png' %}"/>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{% static 'assets/favicons/favicon-16x16.png' %}"/>
-    <link
-      rel="manifest"
-      href="https://skyone.vercel.app/education/assets/favicons/manifest.json"/>
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta
-      name="msapplication-TileImage"
-      content="{% static 'assets/favicons/ms-icon-144x144.png' %}" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.png' %}" />
+
     <!-- PWA primary color-->
     <meta name="theme-color" content="#00BCD4" />
     <link
@@ -292,12 +256,11 @@
                       <a href="/">
                         <span class="logo-main landscape medium"><img
                             src="{% static 'assets/images/1.jpeg' %}"
-                            alt="logo"/>LMS</span>
+                            alt="logo"/></span>
                     </a>
                     </div>
                     <div
-                      class="scrollactive-nav scrollnav show-lg-up multi-menu"
-                    >
+                      class="scrollactive-nav scrollnav show-lg-up multi-menu" >
                       <ul class="main-menu">
                         <li>
                           <a
@@ -515,7 +478,7 @@
                                 >&nbsp;</span
                               >K
                             </h4>
-                            <h6 class="use-text-subtitle2">HD Videos</h6>
+                            <h6 class="use-text-subtitle2">Books</h6>
                           </div>
                         </div>
                       </div>
@@ -1023,10 +986,6 @@
                       </div>
                       <div class="rack" id="cat1">
                         <div class="category-title">
-                          <h3>
-                            <i class="material-icons small">palette</i>&nbsp;
-                            Lorem Ipsum
-                          </h3>
                           <a
                             class="btn-flat waves-effect primary-text view-all"
                             href="products.html"
@@ -1446,10 +1405,6 @@
                       </div>
                       <div class="rack" id="cat2">
                         <div class="category-title">
-                          <h3>
-                            <i class="material-icons small">brightness_low</i
-                            >&nbsp; Lorem Ipsum
-                          </h3>
                           <a
                             class="btn-flat waves-effect primary-text view-all"
                             href="products.html"
@@ -1874,10 +1829,6 @@
                       </div>
                       <div class="rack mb-10" id="cat3">
                         <div class="category-title">
-                          <h3>
-                            <i class="material-icons small">language</i>&nbsp;
-                            Lorem Ipsum
-                          </h3>
                           <a
                             class="btn-flat waves-effect primary-text view-all"
                             href="products.html"
@@ -2304,50 +2255,8 @@
                   </div>
                 </div>
               </section>
-              <!-- ##### END EXPLORE #####--><!-- ##### ABOUT #####-->
-              <section class="space-top-short" id="about">
-                <div class="root">
-                  <div class="container fixed-width">
-                    <div class="row">
-                      <div class="col-md-6 illu-wrap">
-                        <div
-                          class="wow fadeInLeftShort"
-                          data-wow-offset="-100"
-                          data-wow-delay="0.2s"
-                          data-wow-duration="0.6s"
-                        >
-                          <div class="illustration">
-                            <img
-                              class="img-2d3d"
-                              src="{% static 'assets/images/about_3d_2x_rtx0nf.png' %}"
-                              alt="about"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="text-md-start text-center">
-                          <div class="title-main align-left">
-                            <h4 class="secondary"><span>About us</span></h4>
-                            <p class="desc use-text-subtitle2">
-                              Our mission is to diversify the tech industry
-                              through accessible education and apprenticeship,
-                              unlocking the door to opportunity and empowering
-                              people to achieve their dreams.
-                            </p>
-                          </div>
-                          <a
-                            class="btn secondary waves-effect"
-                            href="{% url 'show_login' %}"
-                            >Join Now</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- ##### END ABOUT #####--><!-- ##### TESTIMONIALS #####-->
+              <!-- ##### END EXPLORE #####-->
+              <!-- ##### TESTIMONIALS #####-->
               <section class="space-top" id="testimonials">
                 <div class="root">
                   <div class="title-main align-center">

@@ -6,19 +6,9 @@
     <meta charset="utf-8">
     <meta name="description" content="E-Library">
     <meta name="viewport" content="minimum-scale=1,initial-scale=1,width=device-width,shrink-to-fit=no"><!-- Favicon-->
-    <link rel="shortcut icon" href="https://skyone.vercel.app/education/assets/favicons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="../assets/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../assets/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../assets/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../assets/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../assets/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../assets/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../assets/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.png' %}" />
+    
     <link rel="manifest" href="https://skyone.vercel.app/education/assets/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../assets/favicons/ms-icon-144x144.png"><!-- PWA primary color-->
@@ -129,7 +119,7 @@
                                         <a href="/">
                                             <span class="logo-main landscape medium"><img
                                                 src="{% static 'assets/images/1.jpeg' %}"
-                                                alt="logo"/>LMS</span>
+                                                alt="logo"/></span>
                                         </a>
                                             </div>
                                     <nav class="user-menu"><a class="btn primary waves-effect"
@@ -147,16 +137,16 @@
                                     <div class="auth-frame">
                                         <div class="row mb-6">
                                             <div class="col-md-12 px-lg-12 px-4">
-                                                <div class="card form-box fragment-fadeUp">
+                                                <div class="shadow-lg card form-box fragment-fadeUp">
                                                     <div class="form-wrap">
                                                         <div class="form-style">
                                                             <div class="head">
                                                                 <h4 class="use-text-title mq-md-up use-text-primary"
-                                                                    data-class="use-text-subtitle">Create new account
+                                                                    data-class="use-text-subtitle">Please Login 
                                                                 </h4>
                                                             </div>
                                                             <div class="socmed-side-login">
-                                                               <a href="{% url 'admin_login' %}"><button class="btn red-btn waves-effect left">Admin Login</button></a> 
+                                                               <a href="{% url 'admin_login' %}"><button class="btn red-btn waves-effect left"> Admin Login</button></a> 
                                                                <a href="{% url 'student_login' %}"><button class="btn blue-btn waves-effect right">Student Login</button></a>
                                                             </div>
                                                         </div>
