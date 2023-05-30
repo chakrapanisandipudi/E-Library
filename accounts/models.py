@@ -12,6 +12,7 @@ class Student(models.Model):
     Department = models.CharField(max_length=10)
     adm_number = models.CharField(max_length=10, blank=True)
     phone = models.CharField(max_length=10, blank=True)
+    profile_pic = models.FileField()
 
     def __str__(self):
         return str(self.user) + " ["+str(self.Department)+']' + " ["+str(self.adm_number)+']'

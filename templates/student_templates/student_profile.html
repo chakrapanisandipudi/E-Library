@@ -1,79 +1,22 @@
+{% extends 'student_templates/student_base.html' %}
 {% load static %}
 {% static "images" as baseUrl %}
-<!DOCTYPE html>
-<html lang="en"  >
-
-  
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-    <title>Dashboard </title>
-    
-    <meta name="description" content="E-Library" />
-    <meta name="keywords" content="dashboard, ">
-    <!-- Canonical SEO -->
-    <link rel="canonical" href="#products/sneat-bootstrap-html-admin-template/">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://demos.E-Library.com/sneat-bootstrap-html-admin-template-free/assets/img/favicon/favicon.ico" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
-
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-    
-    
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %} " class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
-
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
-    
-    <link rel="stylesheet" href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}" />
-
-    <!-- Page CSS -->
-    
-    <!-- Helpers -->
-    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
-    <script src="{% static 'assets/js/config.js' %}"></script>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    <!-- Custom notification for demo -->
-    <!-- beautify ignore:end -->
-
-</head>
-
-<body>
-
-  <!-- Layout wrapper -->
+{% block title %} InfoJini- Student Profile {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar  ">
-  <div class="layout-container">
+<div class="layout-container">
 
-    {% include 'student_templates/student_sidebar.html' %}
- <!-- Content wrapper -->
- <div class="content-wrapper">
+{% include 'student_templates/student_sidebar.html' %}
+<!-- Content wrapper -->
+<div class="content-wrapper">
 
-    <!-- Content -->
-    
-      <div class="container-xxl flex-grow-1 container-p-y">
-        
+<!-- Content -->
+
+<div class="container-xxl flex-grow-1 container-p-y">
+  
         
 <h4 class="fw-bold py-3 mb-4">
 <span class="text-muted fw-light">Account Settings /</span> Account
@@ -86,8 +29,8 @@
   <!-- Account -->
   <div class="card-body">
     <div class="d-flex align-items-start align-items-sm-center gap-4">
-      <img src="{% static 'assets/images/users/user-100.png' %}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
-      <div class="button-wrapper">
+      <img src="{{user.student.profile_pic}}" alt="user-avatar" class="d-block rounded-circle" style="width:80px;height: 80px;" id="uploadedAvatar" />
+      <!-- <div class="button-wrapper">
         <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
           <span class="d-none d-sm-block">Upload new photo</span>
           <i class="bx bx-upload d-block d-sm-none"></i>
@@ -99,7 +42,7 @@
         </button>
 
         <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
-      </div>
+      </div> -->
     </div>
   </div>
   <hr class="my-0">
@@ -107,29 +50,29 @@
     <form id="formAccountSettings" method="POST" onsubmit="return false">
       <div class="row">
         <div class="mb-3 col-md-6">
-          <label for="firstName" class="form-label">User Name</label>
-          <input class="form-control" type="text" id="firstName" name="firstName" value={{user.username}} autofocus />
+          <label for="username" class="form-label">User Name</label>
+          <input class="form-control" type="text" id="username" name="username" value="{{user.username}}" autofocus />
         </div>
         <div class="mb-3 col-md-6">
           <label for="email" class="form-label">E-mail</label>
-          <input class="form-control" type="text" id="email" name="email"  value={{user.email}} />
+          <input class="form-control" type="email" id="email" name="email"  value="{{user.email}}" />
         </div>
         <div class="mb-3 col-md-6">
-          <label for="organization" class="form-label">Department</label>
-          <input type="text" class="form-control" id="organization" name="organization" value="{{user.student.Department}}" />
+          <label for="Department" class="form-label">Department</label>
+          <input type="text" class="form-control" id="Department" name="Department" value="{{user.student.Department}}" />
         </div>
         <div class="mb-3 col-md-6">
-          <label class="form-label" for="phoneNumber">Phone Number</label>
+          <label class="form-label" for="phone">Phone Number</label>
           <div class="input-group input-group-merge">
-            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" value= {{user.student.phone}} />
+            <input type="text" id="phone" name="phone" class="form-control" value="{{user.student.phone}}" />
           </div>
         </div>
         <div class="mb-3 col-md-6">
-          <label for="address" class="form-label">Admission Number</label>
-          <input type="text" class="form-control" id="address" name="address" value={{user.student.adm_number}} />
+          <label for="adm_number" class="form-label">Admission Number</label>
+          <input type="text" class="form-control" id="adm_number" name="adm_number" value="{{user.student.adm_number}}" />
         </div>
       <div class="mt-2">
-        <button type="submit" class="btn btn-primary me-2">Save changes</button>
+        <a href="{% url 'student_edit_profile'%}" type="button" class="btn btn-outline-primary">Edit Changes</a>
         <button type="reset" class="btn btn-outline-secondary">Cancel</button>
       </div>
     </form>
@@ -142,54 +85,4 @@
 </div>
 <!-- / Content -->
 
-<!-- Footer -->
-<footer class="content-footer footer bg-footer-theme">
-<div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-<div class="mb-2 mb-md-0">
-  © <script>
-  document.write(new Date().getFullYear())
-  </script>
-  , made with ❤️ by <a href="#" target="_blank" class="footer-link fw-bolder">E-Library</a>
-</div>
-<div>
-  
-</div>
-</div>
-</footer>
-<!-- / Footer -->
-<div class="content-backdrop fade"></div>
-</div>
-<!-- Content wrapper -->
-</div>
-<!-- / Layout page -->
-</div>
-
-<!-- Overlay -->
-<div class="layout-overlay layout-menu-toggle"></div>
-</div>
-
-<!-- Core JS -->
-<!-- build:js assets/vendor/js/core.js -->
-<script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
-<script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
-<script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
-<script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
-
-<script src="{% static 'assets/vendor/js/menu.js' %}"></script>
-<!-- endbuild -->
-
-<!-- Vendors JS -->
-<script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
-
-<!-- Main JS -->
-<script src="{% static 'assets/js/main.js' %}"></script>
-
-<!-- Page JS -->
-<script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
-
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="../../../buttons.github.io/buttons.js"></script>
-
-</body>
-
-</html>
+{% endblock %}

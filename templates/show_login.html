@@ -1,26 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
 {% static "images" as baseUrl %}
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="E-Library">
-    <meta name="viewport" content="minimum-scale=1,initial-scale=1,width=device-width,shrink-to-fit=no"><!-- Favicon-->
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.png' %}" />
-    
-    <link rel="manifest" href="https://skyone.vercel.app/education/assets/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="../assets/favicons/ms-icon-144x144.png"><!-- PWA primary color-->
-    <meta name="theme-color" content="#00BCD4">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{% static 'assets/css/ionicons-2.0.1/css/ionicons.min.css' %}"><!-- Facebook-->
-    <title>LMS - Login</title><!-- Styles-->
-    <link href="{% static 'assets/css/education-bundle.min.css' %}" rel="stylesheet">
-</head>
+{% block title %} InfoJini- Show Login {% endblock %}
+{% block css %}
+{% endblock %}
 
-<body>
+{% block body %}
     <div id="preloader" style="position: fixed; z-index: 10000; background: #fafafa; width: 100%; height: 100%"><img
             style="opacity: 0.2; position: fixed; top: calc(50% - 50px); left: calc(50% - 50px)"
             src="{% static 'assets/images/loading.gif' %}" alt="loading"></div>
@@ -142,7 +127,7 @@
                                                         <div class="form-style">
                                                             <div class="head">
                                                                 <h4 class="use-text-title mq-md-up use-text-primary"
-                                                                    data-class="use-text-subtitle">Please Login 
+                                                                    data-class="use-text-subtitle">Select  Login to Enter 
                                                                 </h4>
                                                             </div>
                                                             <div class="socmed-side-login">
@@ -165,9 +150,5 @@
                 </div>
             </div>
         </div>
-    </div><!-- Scripts-->
-    <script src="{% static 'assets/js/education-bundle.min.js' %}"></script>
-    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
-</body>
-
-</html>
+    </div>
+{% endblock %}

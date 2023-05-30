@@ -68,8 +68,7 @@ def issue_book(request):
             obj.student_id = request.POST['name2']
             obj.isbn = request.POST['isbn2']
             obj.save()
-            alert = True
-            return render(request, "admin_templates/issue_book.html", {'obj':obj, 'alert':alert})
+            return render(request, "admin_templates/issue_book.html", {'obj':obj})
     return render(request, "admin_templates/issue_book.html", {'form':form})
 
 def student_list(request):
@@ -122,6 +121,7 @@ def student_login(request):
             alert = True
             return render(request, "student_login.html", {'alert':alert})
     return render(request, "student_login.html")
+
 
 
 def admin_login(request):
@@ -195,8 +195,10 @@ def view_issued_book(request):
 def student_profile(request):
     return render(request, "student_templates/student_profile.html")
 
+from django.core.files.storage import FileSystemStorage
+
 @login_required(login_url = '/student_login')
-def edit_profile(request):
+def student_edit_profile(request):
     student = Student.objects.get(user=request.user)
     if request.method == "POST":
         email = request.POST['email']
@@ -204,15 +206,25 @@ def edit_profile(request):
         Department = request.POST['Department']
         adm_number = request.POST['adm_number']
 
+        if request.FILES.get('profile_pic',False):
+                profile_pic=request.FILES['profile_pic']
+                fs=FileSystemStorage()
+                filename=fs.save(profile_pic.name,profile_pic)
+                profile_pic_url=fs.url(filename)
+        else:
+            profile_pic_url=None
+
         student.user.email = email
         student.phone = phone
         student.Department = Department
         student.adm_number = adm_number
+        if profile_pic_url!=None:
+                    student.profile_pic=profile_pic_url
         student.user.save()
         student.save()
         alert = True
-        return render(request, "edit_profile.html", {'alert':alert})
-    return render(request, "edit_profile.html")
+        return render(request, "student_templates/student_edit_profile.html", {'alert':alert})
+    return render(request, "student_templates/student_edit_profile.html")
 
 
 @login_required(login_url = 'student_login')
@@ -221,7 +233,7 @@ def student_borrow_books(request):
 
 @login_required(login_url = 'student_login')
 def student_requested_books(request):
-    return render(request, "student_templates/student_recieved_books.html")
+    return render(request, "student_templates/student_requsted_books.html")
 
 @login_required(login_url = 'student_login')
 def student_received_books(request):
@@ -230,6 +242,25 @@ def student_received_books(request):
 @login_required(login_url = 'student_login')
 def student_rejected_books(request):
     return render(request, "student_templates/student_rejected_books.html")
+
+@login_required(login_url = 'student_login')
+def student_change_password(request):
+    if request.method == "POST":
+        current_password = request.POST['current_password']
+        new_password = request.POST['new_password']
+        try:
+            u = User.objects.get(id=request.user.id)
+            if u.check_password(current_password):
+                u.set_password(new_password)
+                u.save()
+                alert = True
+                return render(request, "student_templates/student_change_password.html", {'alert':alert})
+            else:
+                currpasswrong = True
+                return render(request, "student_templates/student_change_password.html", {'currpasswrong':currpasswrong})
+        except:
+            pass
+    return render(request, "student_templates/student_change_password.html")
 
 ## Other templates ##
 def error404(request):
@@ -253,10 +284,18 @@ def view_book(request, myid):
     books = Book.objects.get(id=myid)
     return render(request,'admin_templates/view_book.html',{'books':books})
 
+def delete_student(request, myid):
+    student = Student.objects.get(id=myid)
+    student.delete()
+    return redirect("student_list")
 
-# def edit_book(request, id):
-#     books = Book.objects.get(id=id)
-#     return render(request,'admin_templates/edit_book.html',{'books':books})
+
+def view_student(request, myid):
+    student = Student.objects.get(id=myid)
+    context = {
+        'student': student
+    }
+    return render(request,'admin_templates/view_student.html',context)
 
 def book_update(request,pk):
     book= get_object_or_404(Book, pk=pk)

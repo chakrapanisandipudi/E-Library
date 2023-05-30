@@ -31453,7 +31453,8 @@ body {
 }
 [dir="ltr"] .logo-main.landscape img {
   margin-right: 16px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  size: 30px;
 }
 [dir="rtl"] .logo-main.landscape img {
   margin-left: 16px;
@@ -38723,9 +38724,9 @@ nav.filter-head .nav-wrapper button {
   }
 }
 @media (min-width: 960px) {
-  .form-style .card.form-box {
+  /* .form-style .card.form-box {
     border: 1px solid var(--v-primary-base);
-  }
+  } */
   .theme--light .form-style .card.form-box {
     background-color: #fff;
   }

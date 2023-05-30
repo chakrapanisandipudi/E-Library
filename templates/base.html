@@ -1,0 +1,37 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="InfoJini" />
+  <title>{% block title %} {% endblock %}</title>
+  <meta name="viewport" content="minimum-scale=1,initial-scale=1,width=device-width, shrink-to-fit=no" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.png' %}" />
+
+  <!-- PWA primary color-->
+  <meta name="theme-color" content="#00BCD4" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="{% static 'assets/css/ionicons-2.0.1/css/ionicons.min.css' %}" />
+  <!-- Styles-->
+  <link href="{% static 'assets/css/education-bundle.min.css' %}" rel="stylesheet" />
+  {% block css %}
+  {% endblock %}
+</head>
+
+<body>
+
+{% block body %}
+{% endblock %}
+
+ <!-- Scripts-->
+ <script src="{% static 'assets/js/education-bundle.min.js' %}"></script>
+ <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+ {% block js %}
+{% endblock %}
+</body>
+
+</html>

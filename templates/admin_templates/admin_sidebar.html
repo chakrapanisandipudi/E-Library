@@ -1,16 +1,18 @@
-
+{% load static %}
 <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item ">
       <a href="{% url 'student_list' %}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
+        <img class="menu-icon tf-icons" src="{% static 'assets/img/icons/flaticons/003-students.png' %}" alt="">
         <div data-i18n="Analytics">Students</div>
       </a>
     </li>
   
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+        <!-- <i class="menu-icon tf-icons bx bx-lock-open-alt"></i> -->
+        <img class="menu-icon tf-icons" src="{% static 'assets/img/icons/flaticons/004-occupation.png' %}" alt="">
         <div data-i18n="Authentications">Issue Books</div>
       </a>
       <ul class="menu-sub">
@@ -29,7 +31,8 @@
   
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+        <!-- <i class="menu-icon tf-icons bx bx-lock-open-alt"></i> -->
+        <img class="menu-icon tf-icons" src="{% static 'assets/img/icons/flaticons/002-books.png' %}" alt="">
         <div data-i18n="Authentications">Books</div>
       </a>
       <ul class="menu-sub">
@@ -48,21 +51,24 @@
   
     <li class="menu-item ">
       <a href="{% url 'admin_requested_books' %}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-git-pull-request"></i>
+        <!-- <i class="menu-icon tf-icons bx bx-git-pull-request"></i> -->
+        <img class="menu-icon tf-icons" src="{% static 'assets/img/icons/flaticons/005-request.png' %}" alt="">
         <div data-i18n="Analytics">Request</div>
       </a>
     </li>
   
     <li class="menu-item ">
       <a href="{% url 'admin_accepted_books' %}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+        <!-- <i class="menu-icon tf-icons bx bx-lock-open-alt"></i> -->
+        <img class="menu-icon tf-icons" src="{% static 'assets/img/icons/flaticons/001-acceptance.png' %}" alt="">
         <div data-i18n="Analytics">Accepted</div>
       </a>
     </li>
   
     <li class="menu-item ">
       <a href="{% url 'admin_recieved_books' %}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
+        <img class="menu-icon tf-icons" src="{% static 'assets/img/icons/flaticons/007-return.png' %}" alt="">
         <div data-i18n="Analytics">Returns</div>
       </a>
     </li>

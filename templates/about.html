@@ -1,264 +1,226 @@
+{% extends 'base.html' %}
 {% load static %}
 {% static "images" as baseUrl %}
+{% block title %} InfoJini- About {% endblock %}
+{% block css %}
+{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="E-Library" />
-    <meta
-      name="viewport"
-      content="minimum-scale=1,initial-scale=1,width=device-width,shrink-to-fit=no"/>
-      <!-- Favicon -->
-      <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.png' %}" />
+{% block body %}
 
-    <!-- PWA primary color-->
-    <meta name="theme-color" content="#00BCD4" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/css/ionicons-2.0.1/css/ionicons.min.css' %}"
-    />
-    <title>LMS - About</title>
-    <!-- Styles-->
-    <link href="{% static 'assets/css/education-bundle.min.css' %}" rel="stylesheet" />
-  </head>
-  <body>
-    <div
-      id="preloader"
-      style="
-        position: fixed;
-        z-index: 10000;
-        background: #fafafa;
-        width: 100%;
-        height: 100%;
-      "
-    >
-      <img
-        style="
-          opacity: 0.2;
-          position: fixed;
-          top: calc(50% - 50px);
-          left: calc(50% - 50px);
-        "
-        src="{% static 'assets/images/loading.gif' %}"
-        alt="loading"
-      />
-    </div>
-    <div class="m-application theme--light transition-page" id="app">
-      <div class="loading"></div>
-      <div class="m-content smart smart-var" id="main-wrap">
-       
-        <div id="about-page">
-          <div class="main-wrap">
-            <!-- #### HEADER ####-->
-            <div class="sidenav mobile-nav" id="slide_menu">
-              <div class="side-multilv">
-                <div class="collection side-multilv">
-                  <ul class="collapsible expandable">
-                    <li class="collection-item">
-                      <a
-                        class="sidenav-close waves-effect menu-list"
-                        href="{% url 'about_us' %}"
-                        >About</a>
-                    </li>
-                    <li class="collection-item">
-                      <a
-                        class="sidenav-close waves-effect menu-list"
-                        href="{% url 'contact_us' %}"
-                        >Contact</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="collection">
-                  <ul>
-                    <li class="collection-item">
-                      <a
-                        class="sidenav-close waves-effect menu-list"
-                        href="{% url 'show_login' %}"
-                        >Login</a
-                      >
-                    </li>
-                    <li class="collection-item">
-                      <a
-                        class="sidenav-close waves-effect menu-list"
-                        href="{% url 'register' %}"
-                        >register</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-          </div>
-          <header class="app-bar header" id="header">
-          <div class="container">
-              <div class="header-content">
-              <nav class="nav-menu">
-                  <button
-                  class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down"
-                  id="mobile_menu"
-                  type="button"
-                  data-target="slide_menu"
-                  >
-                  <span class="hamburger-box"
-                      ><span class="bar hamburger-inner"></span
-                  ></span>
-                  </button>
-                  <div class="logo">
-                    <a href="/">
-                      <span class="logo-main landscape medium"><img
-                          src="{% static 'assets/images/1.jpeg' %}"
-                          alt="logo"/></span>
-                  </a>
-                  </div>
-                  <div
-                  class="scrollactive-nav scrollnav show-lg-up multi-menu"
-                  >
-                  <ul class="main-menu">
-                      <li>
-                      <a
-                          class="btn btn-flat anchor-link waves-effect"
-                          href="{% url 'about_us' %}"
-                          >About </a
-                      >
-                      </li>
-                      <li>
-                      <a
-                          class="btn btn-flat anchor-link waves-effect"
-                          href="{% url 'contact_us' %}">Contact</a>
-                      </li>
-                  </ul>
-                  </div>
-                  <nav class="user-menu">
+<div
+  id="preloader"
+  style="
+    position: fixed;
+    z-index: 10000;
+    background: #fafafa;
+    width: 100%;
+    height: 100%;
+  "
+>
+  <img
+    style="
+      opacity: 0.2;
+      position: fixed;
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+    "
+    src="{% static 'assets/images/loading.gif' %}"
+    alt="loading"
+  />
+</div>
+<div class="m-application theme--light transition-page" id="app">
+  <div class="loading"></div>
+  <div class="m-content smart smart-var" id="main-wrap">
+    
+    <div id="about-page">
+      <div class="main-wrap">
+        <!-- #### HEADER ####-->
+        <div class="sidenav mobile-nav" id="slide_menu">
+          <div class="side-multilv">
+            <div class="collection side-multilv">
+              <ul class="collapsible expandable">
+                <li class="collection-item">
                   <a
-                      class="btn btn-flat waves-effect show-sm-up"
-                      href="{% url 'show_login' %}"
-                      >Login</a
-                  >
+                    class="sidenav-close waves-effect menu-list"
+                    href="{% url 'about_us' %}"
+                    >About</a>
+                </li>
+                <li class="collection-item">
                   <a
-                      class="btn waves-effect primary show-sm-up"
-                      href="{% url 'register' %}"
-                      >register</a>
-                  <span class="spacer vertical-divider show-lg-up"></span>
-                  </nav>
-              </nav>
-              <div id="container_menu"></div>
-              </div>
-          </div>
-          </header>
-            <!-- #### END HEADER ####-->
-            <div class="container-front">
-              <!-- ##### BANNER #####-->
-              <div class="hero-banner-wrap">
-                <div class="bg-deco"></div>
-                <div class="container small-deco"><div></div></div>
-                <div class="container">
-                  <div class="banner-basic">
-                    <div class="banner-wrap">
-                      <div class="inner">
-                        <div
-                          class="row d-flex justify-content-center align-items-center"
-                        >
-                          <div class="col-md-6 px-sm-5 px-0 py-4">
-                            <div class="text">
-                              <div class="title title-left">
-                                <h4 class="use-text-title2">
-                                 About Us
-                                </h4>
-                              </div>
-                              <h5 class="use-text-subtitle2">
-                             Our Mission is to diversify the tech industry through 
-                             accessible education and apprenticeship, unlocking the
-                             door to opportunity and empowering people to achieve
-                             their dreams.
-                              </h5>
-                            </div>
-                          </div>
-                          <div class="col-md-6 px-sm-5 py-4">
-                            <div class="img">
-                              <img
-                                class="img-2d3d"
-                                src="{% static 'assets/images/about-page_3d_2x_omiw8f.png' %}"
-                                alt="services 3d"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ##### BANNER #####-->
+                    class="sidenav-close waves-effect menu-list"
+                    href="{% url 'contact_us' %}"
+                    >Contact</a>
+                </li>
+              </ul>
             </div>
-            <!-- ##### CALL ACTION #####-->
-            <section class="bottom-deco-wrap space-top space-bottom-short">
-              <div class="footer-top-deco">
-                <div
-                  class="wow zoomInShort"
-                  data-wow-offset="0"
-                  data-wow-delay="0.2s"
-                  data-wow-duration="0.3s"
-                >
-                  <img
-                    class="img-2d3d"
-                    src="{% static 'assets/images/footer_3d_2x_tivfcv.png' %}"
-                    alt="footer"
-                  />
-                </div>
+            <div class="dropdown-divider"></div>
+            <div class="collection">
+              <ul>
+                <li class="collection-item">
+                  <a
+                    class="sidenav-close waves-effect menu-list"
+                    href="{% url 'show_login' %}"
+                    >Login</a
+                  >
+                </li>
+                <li class="collection-item">
+                  <a
+                    class="sidenav-close waves-effect menu-list"
+                    href="{% url 'register' %}"
+                    >register</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <header class="app-bar header" id="header">
+      <div class="container">
+          <div class="header-content">
+          <nav class="nav-menu">
+              <button
+              class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down"
+              id="mobile_menu"
+              type="button"
+              data-target="slide_menu"
+              >
+              <span class="hamburger-box"
+                  ><span class="bar hamburger-inner"></span
+              ></span>
+              </button>
+              <div class="logo">
+                <a href="/">
+                  <span class="logo-main landscape medium"><img
+                      src="{% static 'assets/images/1.jpeg' %}"
+                      alt="logo"/></span>
+              </a>
               </div>
-              <div class="call-to-action">
-                <div class="container fixed-width-md-up">
-                  <div class="root">
-                    <div class="card paper">
-                      <div class="row align-items-center mb-0">
-                        <div class="col-md-8 pa-0">
-                          <h4 class="use-text-title2 pb-2 use-text-primary">
-                            Ready to get started ?
-                          </h4>
-                        </div>
-                        <div class="col-md-4 pa-0">
-                          <div
-                            class="d-flex align-items-center justify-content-end"
-                          >
-                            <a
-                              class="waves-effect btn button primary"
-                              href="{% url 'contact_us' %}"
-                              >contact us</a
-                            >
+              <div
+              class="scrollactive-nav scrollnav show-lg-up multi-menu"
+              >
+              <ul class="main-menu">
+                  <li>
+                  <a
+                      class="btn btn-flat anchor-link waves-effect"
+                      href="{% url 'about_us' %}"
+                      >About </a
+                  >
+                  </li>
+                  <li>
+                  <a
+                      class="btn btn-flat anchor-link waves-effect"
+                      href="{% url 'contact_us' %}">Contact</a>
+                  </li>
+              </ul>
+              </div>
+              <nav class="user-menu">
+              <a
+                  class="btn btn-flat waves-effect show-sm-up"
+                  href="{% url 'show_login' %}"
+                  >Login</a
+              >
+              <a
+                  class="btn waves-effect primary show-sm-up"
+                  href="{% url 'register' %}"
+                  >register</a>
+              <span class="spacer vertical-divider show-lg-up"></span>
+              </nav>
+          </nav>
+          <div id="container_menu"></div>
+          </div>
+      </div>
+      </header>
+        <!-- #### END HEADER ####-->
+        <div class="container-front">
+          <!-- ##### BANNER #####-->
+          <div class="hero-banner-wrap">
+            <div class="bg-deco"></div>
+            <div class="container small-deco"><div></div></div>
+            <div class="container">
+              <div class="banner-basic">
+                <div class="banner-wrap">
+                  <div class="inner">
+                    <div
+                      class="row d-flex justify-content-center align-items-center"
+                    >
+                      <div class="col-md-6 px-sm-5 px-0 py-4">
+                        <div class="text">
+                          <div class="title title-left">
+                            <h4 class="use-text-title2">
+                              About Us
+                            </h4>
                           </div>
+                          <h5 class="use-text-subtitle2">
+                          Our Mission is to diversify the tech industry through 
+                          accessible education and apprenticeship, unlocking the
+                          door to opportunity and empowering people to achieve
+                          their dreams.
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="col-md-6 px-sm-5 py-4">
+                        <div class="img">
+                          <img
+                            class="img-2d3d"
+                            src="{% static 'assets/images/about-page_3d_2x_omiw8f.png' %}"
+                            alt="services 3d"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
-            <!-- ##### END CALL ACTION #####-->
-            <!-- ##### FOOTER #####-->
-            {% include 'footer.html' %}
-            <!-- ##### END FOOTER #####-->
+            </div>
           </div>
+          <!-- ##### BANNER #####-->
         </div>
+        <!-- ##### CALL ACTION #####-->
+        <section class="bottom-deco-wrap space-top space-bottom-short">
+          <div class="footer-top-deco">
+            <div
+              class="wow zoomInShort"
+              data-wow-offset="0"
+              data-wow-delay="0.2s"
+              data-wow-duration="0.3s"
+            >
+              <img
+                class="img-2d3d"
+                src="{% static 'assets/images/footer_3d_2x_tivfcv.png' %}"
+                alt="footer"
+              />
+            </div>
+          </div>
+          <div class="call-to-action">
+            <div class="container fixed-width-md-up">
+              <div class="root">
+                <div class="card paper">
+                  <div class="row align-items-center mb-0">
+                    <div class="col-md-8 pa-0">
+                      <h4 class="use-text-title2 pb-2 use-text-primary">
+                        Ready to get started ?
+                      </h4>
+                    </div>
+                    <div class="col-md-4 pa-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"  >
+                        <a
+                          class="waves-effect btn button primary"
+                          href="{% url 'contact_us' %}" >contact us</a >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ##### END CALL ACTION #####-->
+        <!-- ##### FOOTER #####-->
+        {% include 'footer.html' %}
+        <!-- ##### END FOOTER #####-->
       </div>
     </div>
-    <!-- Scripts-->
-    <script src="{% static 'assets/js/education-bundle.min.js' %}"></script>
-    <script
-      async=""
-      defer=""
-      src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-    ></script>
-  </body>
-
-</html>
+  </div>
+</div>
+{% endblock %}

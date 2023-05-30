@@ -1,0 +1,122 @@
+{% extends 'admin_templates/admin_base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+{% block title %} InfoJini- Admin View Student {% endblock %}
+{% block css %}
+{% endblock %}
+
+{% block body %}
+
+  <!-- Layout wrapper -->
+<div class="layout-wrapper layout-content-navbar  ">
+  <div class="layout-container">
+
+<!-- Menu -->
+
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+
+  <div class="app-brand demo ">
+    <a href="index.html" class="app-brand-link">
+      <span class="app-brand-logo demo">
+        <img src="{% static 'assets/images/1.jpeg' %}" alt="">
+</span>
+<!--  -->
+</a>
+<a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+  <i class="bx bx-chevron-left bx-sm align-middle"></i>
+</a>
+</div>
+
+<div class="menu-inner-shadow"></div>
+{% include 'admin_templates/admin_sidebar.html' %}
+
+</aside>
+<!-- / Menu -->
+    <!-- Layout container -->
+    <div class="layout-page">
+<!-- Navbar -->
+<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+      
+<div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+  <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+    <i class="bx bx-menu bx-sm"></i>
+  </a>
+</div>
+    
+<div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse"> 
+<!-- Search -->
+<div class="navbar-nav align-items-center">
+  <div class="nav-item d-flex align-items-center">
+    <i class="bx bx-search fs-4 lh-0"></i>
+    <input type="text" class="form-control border-0 shadow-none" value="Search..." aria-label="Search...">
+  </div>
+</div>
+<!-- /Search -->
+{% include 'admin_templates/admin_navbar.html' %}
+</div>
+</nav>
+
+<!-- / Navbar -->
+ <!-- Content wrapper -->
+ <div class="content-wrapper">
+
+    <!-- Content -->
+    
+      <div class="container-xxl flex-grow-1 container-p-y">
+        
+        
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> View Student</h4>
+
+<!-- Basic Layout & Basic with Icons -->
+<div class="row">
+<!-- Basic Layout -->
+<div class="col-xxl">
+<div class="shadow card mb-4">
+  
+  <div class="card-body">
+    <form id="formAccountSettings" method="POST" onsubmit="return false">
+        <div class="row">
+          <div class="mb-3 col-md-6">
+            <label for="firstName" class="form-label">User Name</label>
+            <input class="form-control" type="text" id="firstName" name="firstName" value="{{student.user.username}}" autofocus />
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="email" class="form-label">E-mail</label>
+            <input class="form-control" type="text" id="email" name="email" value="{{student.user.email}}" />
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="organization" class="form-label">Department</label>
+            <input type="text" class="form-control" id="organization" name="organization" value="{{student.Department}}" />
+          </div>
+          <div class="mb-3 col-md-6">
+            <label class="form-label" for="phoneNumber">Phone Number</label>
+            <div class="input-group input-group-merge">
+              <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" value= "{{student.phone}}" />
+            </div>
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="address" class="form-label">Admission Number</label>
+            <input type="text" class="form-control" id="address" name="address" value="{{student.adm_number}}" />
+          </div>
+        <!-- <div class="mt-2">
+          <button type="submit" class="btn btn-primary me-2">Save changes</button>
+          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+        </div> -->
+      </form>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- / Content -->
+<!-- Footer -->
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Book Edit Success.")
+    document.location = "book_list"
+    {% endif %}
+</script>
+{% endblock %}
